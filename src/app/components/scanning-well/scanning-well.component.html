@@ -1,0 +1,12 @@
+<div class="scanWell">
+  <button (click)="toggleScanning && toggleScanning()">
+    {{ scanning ? "end scanning" : "begin scanning" }}
+  </button>
+  <input
+    *ngIf="scanning && carriagePressed"
+    [(ngModel)]="currCode"
+    (ngModelChange)="currCodeChange.emit($event)" 
+    (keydown.enter)="pushIntoCurrCodeArr();carriagePressed()"
+  />
+  <button *ngIf="scanning" (click)="beginScanCleanUp()">scan clean up</button>
+</div>

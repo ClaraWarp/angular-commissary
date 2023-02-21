@@ -1,0 +1,15 @@
+<div class="pantryWell">
+  <app-scanning-well
+    [scanning]="scanning"
+    [currCode]="currCode"
+    [toggleScanning]="toggleScanning.bind(this)"
+    [carriagePressed]="carriagePressed.bind(this)"
+    (currCodeChange)="this.currCode = $event"
+    [pantryItems]="pantryItems"
+  ></app-scanning-well>
+  <ng-container *ngIf="!scanning">
+    <div *ngFor="let pantryItem of pantryItems.reverse()">
+      <app-pantry-item-card [pantryItem]="pantryItem" (emitDelete)="deleteItem($event)"></app-pantry-item-card>
+    </div>
+  </ng-container>
+</div>

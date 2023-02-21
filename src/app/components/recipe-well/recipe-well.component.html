@@ -1,0 +1,20 @@
+<div>
+  <button (click)="createFormToggle()">create recipe</button>
+  <form *ngIf="createFormFlag">
+    <input
+      [(ngModel)]="currCreateInput"
+      (keydown.enter)="createRecipe()"
+      name="currCreateInput"
+    />
+  </form>
+  <div *ngFor="let recipe of recipes|sortByFrequency" class="recipeCard" [ngClass]="{'craftable': evaluateCraftable(recipe)}">
+    {{ recipe.name }}
+    <br />
+    ingredients: <br />
+    {{ recipe.ingredients }}
+    <br />
+    <button>x</button>
+    <button>ingredient-toggle</button>
+    <button (click)="logRecipe(recipe)">log recipe</button>
+  </div>
+</div>

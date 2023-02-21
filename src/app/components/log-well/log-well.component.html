@@ -1,0 +1,8 @@
+<div>
+    <p>Current Days Calories: <span>{{ todayCalories }}</span></p>
+    <p *ngFor="let currLog of recipeLogs">
+        {{ currLog.date | date: 'short' }} ||
+        <span (dblclick)="adjustLogCalorie(currLog)">{{ currLog.logCalories }}</span> Calories ||
+        {{ currLog.logName }}
+    </p>
+</div>

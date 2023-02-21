@@ -1,0 +1,15 @@
+.pantryItem {
+    border: 1px solid #7494EA;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+img {
+    max-width: 20vw;
+    max-height: 20vh;
+}
+
+.inPantry {
+    border: 6px solid #7494EA
+}

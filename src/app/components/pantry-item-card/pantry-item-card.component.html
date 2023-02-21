@@ -1,0 +1,14 @@
+<div class="pantryItem" [ngClass]="{'inPantry': pantryItem.inPantry}">
+    <img (dblclick)="changeImage()"
+    src="{{ pantryItem.product?.imageUrl || pantryItem.custom?.imageUrl || 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png' }}" />
+    <div>
+      <p>{{ pantryItem.product?.name ? pantryItem.product?.name : pantryItem.custom?.name }}</p>
+      <p>Alias List:</p>
+      <p>{{ pantryItem.aliasList }}</p>
+      <div>
+        <button (click)="deleteItem()">x</button>
+        <button (dblclick)="toggleStockItem()">stock</button>
+        <button (dblclick)="toggleAlias()">alias</button>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.recipeCard {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.recipeCard.craftable {
+    border: 3px solid red;
+}
